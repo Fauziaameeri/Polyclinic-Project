@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/img.png">
+    <title>Admin Log-in</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Stylesheet CSS -->
+    <link rel="stylesheet" href="styles/admin_styles.css">
+</head><!--Head-->
+<body><!--Body-->
+
+<!--Header Login to add/update facility-->
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Admin Login</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Admin login</h5>
+            </div>
+            <div class="modal-body">
+                <form class = "form-group" id = "login" method = "get" action = "add_update.html">
+                    <div class="form-group">
+                        <label for="username" class="col-form-label">User:</label>
+                        <input type="text" class="form-control" id="username">
+                    </div><!--div-->
+                    <div class = "form-group">
+                        <span class = "err" id="err-username">Please enter a valid username</span>
+                    </div><!--div-->
+                    <div class="form-group">
+                        <label for="pass">Password:</label>
+                        <input type="password" class="form-control" id="pass"></input>
+                    </div>
+                    <span class = "err" id="err-pass">Password not accepted</span>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button onclick="document.location = 'Main.html'" id="exit" type="button" class="btn btn-secondary" data-dismiss="modal">Back to Main Page</button>
+                <button type="button" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--    <div class="row justify-content-center">-->
+<!--        <form class = "form-group" id = "login" method = "get" action = "add_update.html">-->
+<!--            &lt;!&ndash; Login &ndash;&gt;-->
+<!--            <fieldset class = "form-group">-->
+<!--                <div class = "row justify-content-center">-->
+<!--                    <div class = "col-sm-12 col-md-12 col-lg-8">-->
+<!--                        <h4 class = "text-center ml-2">Admin Log-in</h4>-->
+<!--                    </div>&lt;!&ndash;div&ndash;&gt;-->
+<!--                </div>&lt;!&ndash;div&ndash;&gt;-->
+<!--                <br>-->
+<!--                <div class = "row d-flex justify-content-center mobile_login">-->
+<!--                    <div class = "col-12">-->
+<!--                        <div class = "form-group form-inline">-->
+<!--                            <label class = "mr-sm-5 mr-0" for = "username">User:</label>-->
+<!--                            <input type="text" class="form-control"  id = "username">-->
+<!--                        </div>&lt;!&ndash;div&ndash;&gt;-->
+<!--                        <div class = "form-group">-->
+<!--                            <span class = "err" id="err-username">Please enter a valid username</span>-->
+<!--                        </div>&lt;!&ndash;div&ndash;&gt;-->
+<!--                    </div>&lt;!&ndash;div&ndash;&gt;-->
+<!--                </div>&lt;!&ndash;div&ndash;&gt;-->
+<!--                <div class = "row justify-content-center mobile_login">-->
+<!--                    <div>-->
+<!--                        <div class = "form-group form-inline">-->
+<!--                            <label class = "mr-sm-4 form-inline" for = "pass">Password:</label>-->
+<!--                            <input type="password" class="form-control form-inline ml-sm-1" id = "pass">-->
+<!--                            &lt;!&ndash;<input type = "checkbox" onclick="passVisibility()"> Show Password &ndash;&gt;-->
+<!--                        </div>&lt;!&ndash;div&ndash;&gt;-->
+<!--                    </div>&lt;!&ndash;div&ndash;&gt;-->
+<!--                </div>&lt;!&ndash;div&ndash;&gt;-->
+<!--                <span class = "err" id="err-pass">Password not accepted</span>-->
+<!--            </fieldset>&lt;!&ndash;fieldset&ndash;&gt;-->
+
+<!--            <div class = "row justify-content-center">-->
+<!--                <div id = "pass_reset">-->
+<!--                    <a href="http://www.greenriver.edu">Forgot username and/or password?</a>-->
+<!--                </div>&lt;!&ndash;div&ndash;&gt;-->
+<!--            </div>&lt;!&ndash;div&ndash;&gt;-->
+
+<!--        </form>&lt;!&ndash;form&ndash;&gt;-->
+<!--    </div>&lt;!&ndash;div&ndash;&gt;-->
+<!--</div>&lt;!&ndash;div&ndash;&gt;-->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="scripts/admin.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body><!--Body-->
+</html><!--HTML-->

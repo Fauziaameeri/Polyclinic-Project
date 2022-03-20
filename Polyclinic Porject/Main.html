@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="image/img.png">
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="styles/main.css">
+    <link rel="stylesheet" media="print" href="styles/print.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <title>Home Page</title>
+</head>
+
+<!--Body, JumboTron, H1  -->
+<body class="container-fluid border-rounded" style="background-color: #34495e">
+    <div class="jumbotron d-flex">
+        <img class = "logo" src ="image/img.png" alt="logo" height="70px">
+        <h1 class ="logo">nyDex</h1>
+    </div><!--div -->
+    <!--Nav bar and links -->
+    <nav class="navbar navbar-expand-sm bg-dark">
+
+    <!--Nav Links -->
+
+        <ul id="myUL" class="navbar-nav">
+            <li>
+                <a href="Main.html?link2" class="btn btn-outline-primary btn-lg active mx-4" role="button" aria-pressed="true">Switch Card View</a>
+            </li><!--Li-->
+            <li class="nav-item">
+                <button type="button" class="nav-link" data-toggle="modal" data-target="#exampleModal">Add New Facility</button>
+            </li><!--li -->
+            <li class="nav-item">
+                <button type="button" class="nav-link" data-toggle="modal" data-target="#exampleModal1">Suggest an Edit</button>
+            </li><!--li -->
+            <li>
+                <a href="table.php?link1" class="btn btn-outline-primary btn-lg active mx-4" role="button" aria-pressed="true">Switch View</a>
+            </li><!--Li -->
+        </ul><!--ul -->
+        <!--Search bar-->
+    <div class="form-inline ml-auto">
+        <input class="py-2" type="text" placeholder="Search..." id="search-bar" class="form-control" onkeyup="searchHospital()" />
+    </div><!--div-->
+    </nav><!--nav-->
+
+    <!--Back-to-Top button-->
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btnBack-Top">
+        <i>Back To Top</i>
+    </button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Admin login</h5>
+                </div>
+                <div class="modal-body">
+                    <form class = "form-group" id = "login" method = "get" action = "add_update.html">
+                        <div class="form-group">
+                            <label for="username" class="col-form-label">User:</label>
+                            <input type="text" class="form-control" id="username">
+                        </div><!--div-->
+                        <div class = "form-group">
+                            <span class = "err" id="err-username">Please enter a valid username</span>
+                        </div><!--div-->
+                        <div class="form-group">
+                            <label for="pass">Password:</label>
+                            <input type="password" class="form-control" id="pass"></input>
+                        </div>
+                        <span class = "err" id="err-pass">Password not accepted</span>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="document.location = 'Main.html'" id="exit" type="button" class="btn btn-secondary" data-dismiss="modal">Back to Main Page</button>
+                    <button type="button" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Please enter your suggestion: </h5>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        <div class="form-group">
+                            <label for = "ename">Employee name</label>
+                            <input type="text" id="ename" name="ename" class="form-control" placeholder="Please enter your full name">
+                            <span class="err" id="err-ename">Please enter your name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for = "eemail">Employee email</label>
+                            <input type="email" id="eemail" name="eemail" class="form-control" placeholder="Please enter your email address">
+                            <span class="err" id="err-eemail">Please enter a valid email</span>
+                        </div>
+                        <div class="mb-5 form-group" id="noteBox">
+                            <label for="sugEntry">Suggestion</label>
+                            <textarea class="form-control" id="sugEntry" name = "sugEntry" rows="3"></textarea>
+                        </div><!--div-->
+                    </form><!--div-->
+                    <div class="modal-footer">
+                        <button onclick="document.location = 'Main.html'" id="exit" type="button" class="btn btn-secondary" data-dismiss="modal">Back to Main Page</button>
+                        <button type="submit" class="btn btn-dark px-5 my-lg-n5 form-control" id = "sg_btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Card Hospital Info/ More button -->
+<div id="hospital-cards">
+    <span id="hospital-cards-loading" class="sr-only">Loading...</span>
+    <!-- This is where we will create the cards using javascript after the data loads -->
+</div><!--div -->
+
+<!--Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="scripts/main.js"></script>
+
+</body><!--Body-->
+</html><!--HTML-->
